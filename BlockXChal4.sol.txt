@@ -1,0 +1,20 @@
+pragma solidity  ^0.4.20;
+
+contract Recieve{
+    
+    function() public payable {  }
+    function getBal() public returns (uint) {
+        
+        return address(this).balance;
+    }
+
+}
+
+contract Send{
+    
+    function sendEther( address _addrs) public payable{
+        _addrs.transfer(msg.value);
+    }
+    
+    
+}
